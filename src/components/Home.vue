@@ -12,17 +12,17 @@
       <robot-exchange-pair></robot-exchange-pair>
     </md-layout>
 
-    <md-layout md-flex="100">
+    <!-- <md-layout md-flex="100">
       <order-list></order-list>
-    </md-layout>
+    </md-layout> -->
 
   </md-layout>
 </template>
 
 <script>
 import WalletInfo from '@/components/common/WalletInfo';
-import RobotExchangePair from '@/components/common/RobotExchangePair';
-import OrderList from '@/components/common/OrderList';
+import ReceiverList from '@/components/common/ReceiverList';
+// import OrderList from '@/components/common/OrderList';
 import RobotSwitch from '@/components/common/RobotSwitch';
 
 export default {
@@ -36,8 +36,8 @@ export default {
   },
   components: {
     'wallet-info': WalletInfo,
-    'robot-exchange-pair': RobotExchangePair,
-    'order-list': OrderList,
+    'robot-exchange-pair': ReceiverList,
+    // 'order-list': OrderList,
     'robot-switch': RobotSwitch,
   },
 };
