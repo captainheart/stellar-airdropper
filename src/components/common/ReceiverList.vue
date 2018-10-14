@@ -2,8 +2,10 @@
   <md-card style="width: 100%;">
     <md-card-header>
       <md-card-header-text>
-        <div class="md-title">{{ $t('robot') + ' ' + $t('exchange.exchange_pair') }}</div>
-        <div class="md-subhead"></div>
+        <div class="md-title">{{ $t('receiver_list.title') }}</div>
+        <div class="md-subhead">
+          blah blah
+        </div>
       </md-card-header-text>
 
       <md-menu md-size="4" md-direction="bottom left">
@@ -11,34 +13,33 @@
           <md-icon>menu</md-icon>
         </md-button>
         <md-menu-content>
-          <md-menu-item @click="openDialog('add_exchange_pair')">
+          <md-menu-item @click="openDialog('add_receiver')">
             <span>{{ $t('add', {what: $t('exchange.exchange_pair')} ) }}</span>
             <md-icon>add</md-icon>
           </md-menu-item>
-          <md-menu-item @click="editParams()">
+          <!-- <md-menu-item @click="editParams()">
             <span>{{ $t('edit', {what: $t('exchange.params')} ) }}</span>
             <md-icon>edit</md-icon>
-          </md-menu-item>
+          </md-menu-item> -->
         </md-menu-content>
       </md-menu>
     </md-card-header>
-    <md-card-content v-if="isRateEditable">
+    <!-- <md-card-content v-if="isRateEditable">
       <md-button @click="saveChange" class="md-raised md-primary">
         <md-icon>save</md-icon>
       </md-button>
-    </md-card-content>
+    </md-card-content> -->
     <md-card-content class="box1">
       <md-table>
         <md-table-header>
           <md-table-row>
-            <md-table-head>{{ $t('exchange.base') + '' + $t('wallet.asset') }}</md-table-head>
-            <md-table-head>{{ $t('exchange.buy_rate') }}</md-table-head>
-            <md-table-head>{{ $t('exchange.value') }}(XLM)</md-table-head>
-            <md-table-head>{{ $t('exchange.counter') + '' + $t('wallet.asset') }}</md-table-head>
+            <md-table-head>{{ $t('receiver_list.no') }}</md-table-head>
+            <md-table-head>{{ $t('receiver_list.address') }}(XLM)</md-table-head>
+            <!-- <md-table-head>{{ $t('receiver_list.counter') + '' + $t('wallet.asset') }}</md-table-head>
             <md-table-head>{{ $t('exchange.sell_rate') }}</md-table-head>
-            <md-table-head>{{ $t('exchange.value') }}(XLM)</md-table-head>
-            <md-table-head>Feed Option</md-table-head>
-            <md-table-head v-if="isRateEditable"></md-table-head>
+            <md-table-head>{{ $t('exchange.value') }}(XLM)</md-table-head> -->
+            <md-table-head>Extra Info</md-table-head>
+            <!-- <md-table-head v-if="isRateEditable"></md-table-head> -->
           </md-table-row>
         </md-table-header>
         <md-table-body>
@@ -54,7 +55,7 @@
       @open="onOpen"
       @close="onClose"
       :md-dialog-width="'50%'"
-      ref="add_exchange_pair">
+      ref="add_receiver">
       <md-input-container>
         <label for="exchange_base_asset"></label>
         <md-select name="exchange_base_asset" md-menu-class="custom-option" id="exchange_base_asset" v-model="baseAsset" :placeholder="$t('exchange.base_asset')">
@@ -141,7 +142,7 @@ export default {
     },
     onClose(ref, type) {
       switch (ref) {
-        case 'add_exchange_pair':
+        case 'add_receiver':
           if (type === 'ok') {
             const baseAsset = this.baseAsset ? this.baseAsset.toUpperCase() : null;
             let baseIssuer = this.baseIssuer ? this.baseIssuer.toUpperCase() : null;
@@ -247,14 +248,14 @@ export default {
       this.counterAsset = null;
       this.counterIssuer = null;
     },
-    editParams() {
-      this.isRateEditable = true;
-      this.isSave = 'opening';
-    },
-    saveChange() {
-      this.isRateEditable = false;
-      this.isSave = 'saved';
-    },
+    // editParams() {
+    //   this.isRateEditable = true;
+    //   this.isSave = 'opening';
+    // },
+    // saveChange() {
+    //   this.isRateEditable = false;
+    //   this.isSave = 'saved';
+    // },
   },
 };
 </script>

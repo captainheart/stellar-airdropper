@@ -33,9 +33,9 @@ window.fixNumCustom = (number, fixed = 7) => Number(number).toFixed(fixed);
 // init VueMaterial
 Vue.use(VueMaterial);
 Vue.material.registerTheme('default', {
-  primary: 'teal',
-  accent: 'red',
-  warn: 'orange',
+  primary: 'blue',
+  accent: 'orange',
+  warn: 'red',
 });
 
 // to config I18n

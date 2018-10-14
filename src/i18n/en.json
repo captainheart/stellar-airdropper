@@ -1,7 +1,7 @@
 {
   "hello": "hello world",
   "site_title": "Stellar Airdropper",
-  "robot_status": "Robot Status: {robotStatus}",
+  "robot_status": "Airdropper Status: {robotStatus}",
   "on": "On",
   "off": "Off",
   "settings": "{what_to} Settings",
@@ -40,6 +40,14 @@
     "remove_trustline_fail": "Remove Trustline Fail.",
     "add_trustline_succ": "Add Trustline Success.",
     "add_trustline_fail": "Add Trustline Fail."
+  },
+  "receiver_list":{
+    "title": "List of Receivers",
+    "no": "Index",
+    "address": "Stellar Address"
+  },
+  "receiver":{
+    "no": "index"
   },
   "exchange": {
     "usd_to_euro": "USD : EURO",
