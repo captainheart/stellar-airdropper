@@ -14,7 +14,7 @@
         </md-button>
         <md-menu-content>
           <md-menu-item @click="openDialog('add_receiver')">
-            <span>{{ $t('add', {what: $t('exchange.exchange_pair')} ) }}</span>
+            <span>{{ $t('add', {what: $t('receiver')} ) }}</span>
             <md-icon>add</md-icon>
           </md-menu-item>
           <!-- <md-menu-item @click="editParams()">
@@ -49,7 +49,7 @@
     </md-card-content>
 
     <dialog-form
-      :md-title="$t('add', {what: $t('exchange_pair')})"
+      :md-title="$t('receiver_list.add_new')"
       :md-ok-text="$t('done')"
       :md-cancel-text="$t('cancel')"
       @open="onOpen"
@@ -59,11 +59,11 @@
       <md-input-container>
         <label for="exchange_base_asset"></label>
         <md-select name="exchange_base_asset" md-menu-class="custom-option" id="exchange_base_asset" v-model="baseAsset" :placeholder="$t('exchange.base_asset')">
-          <md-option value="XLM">XLM</md-option>
+          <md-option value="XLM">XLM Address</md-option>
           <md-option v-for="balance in balances" :key="`${balance.asset_code}_${balance.asset_issuer}`" :value="`${balance.asset_code}`">{{ balance.asset_code }}</md-option>
         </md-select>
       </md-input-container>
-      <md-input-container>
+      <!-- <md-input-container>
         <label for="exchange_base_issuer"></label>
         <md-select name="exchange_base_issuer" md-menu-class="custom-option" id="exchange_base_issuer" v-model="baseIssuer" :placeholder="$t('exchange.base_issuer')">
           <md-option></md-option>
@@ -90,7 +90,7 @@
           <md-option></md-option>
           <md-option v-for="ratio in ratios"  :key="`${ratio}`" :value="`${ratio}`">{{ $t('exchange.'+ratio) }}</md-option>
         </md-select>
-      </md-input-container>
+      </md-input-container> -->
     </dialog-form>
 
   </md-card>

@@ -44,11 +44,10 @@
   "receiver_list":{
     "title": "List of Receivers",
     "no": "Index",
-    "address": "Stellar Address"
+    "address": "Stellar Address",
+    "add_new": "Add Receiver"
   },
-  "receiver":{
-    "no": "index"
-  },
+  "receiver": "Receiver",
   "exchange": {
     "usd_to_euro": "USD : EURO",
     "usd_to_gbp": "USD : GBP",
